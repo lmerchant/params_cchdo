@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Welcome to cchdo.params’s documentation!" href="index.html" />
 
-    <meta name="generator" content="sphinx-4.1.2, furo 2021.08.11.beta42"/>
-        <title>API reference - cchdo.params 0.1.dev1+gad76fd7 documentation</title>
+    <meta name="generator" content="sphinx-4.1.2, furo 2021.08.17.beta43"/>
+        <title>API reference - cchdo.params 0.1.dev1+g51e164b documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=197f00461d56902ea7ca048ec6e6ba026f62c97b" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=93475b62d1c3bc01323a0eefdc14a62d77b12690" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=910ac4ccc9d7c023151c34010d7b500fb9777a51" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
     
     
 
@@ -121,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">cchdo.params 0.1.dev1+gad76fd7 documentation</div></a>
+      <a href="index.html"><div class="brand">cchdo.params 0.1.dev1+g51e164b documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -144,7 +144,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">cchdo.params 0.1.dev1+gad76fd7 documentation</span>
+  <span class="sidebar-brand-text">cchdo.params 0.1.dev1+g51e164b documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -417,10 +417,20 @@ empty units.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="cchdo.params._WHPNames">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">cchdo.params.</span></span><span class="sig-name descname"><span class="pre">_WHPNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cchdo.params._WHPNames" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py property">
+<dd><p>A Mapping providing a lookup between a WOCE style param and unit to an instance of <a class="reference internal" href="#cchdo.params.WHPName" title="cchdo.params.WHPName"><code class="xref py py-class docutils literal notranslate"><span class="pre">WHPName</span></code></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This class should not be directly used, instead use the premade <cite>WHPNames</cite> instance from this module</p>
+</div>
+<dl class="py property">
 <dt class="sig sig-object py" id="cchdo.params._WHPNames.error_cols">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">error_cols</span></span><a class="headerlink" href="#cchdo.params._WHPNames.error_cols" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">error_cols</span></span><em class="property"><span class="pre">:</span> <span class="pre">Dict[str,</span> <span class="pre">cchdo.params.WHPName]</span></em><a class="headerlink" href="#cchdo.params._WHPNames.error_cols" title="Permalink to this definition">¶</a></dt>
+<dd><p>A mapping of all the error names to their corresponding WHPName</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="o">.</span><span class="n">error_cols</span><span class="p">[</span><span class="s2">"C14ERR"</span><span class="p">]</span>
+<span class="go">WHPName(whp_name='DELC14', whp_unit='/MILLE', cf_name=None)</span>
+</pre></div>
+</div>
+</dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="cchdo.params._WHPNames.get">
 <span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">k</span></em><span class="optional">[</span>, <em class="sig-param"><span class="pre">d</span></em><span class="optional">]</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">D[k]</span> <span class="pre">if</span> <span class="pre">k</span> <span class="pre">in</span> <span class="pre">D,</span> <span class="pre">else</span> <span class="pre">d.</span>  <span class="pre">d</span> <span class="pre">defaults</span> <span class="pre">to</span> <span class="pre">None.</span></span></span><a class="headerlink" href="#cchdo.params._WHPNames.get" title="Permalink to this definition">¶</a></dt>
@@ -428,7 +438,18 @@ empty units.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="cchdo.params._WHPNames.groups">
 <em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">groups</span></span><a class="headerlink" href="#cchdo.params._WHPNames.groups" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>A namedtuple with the properties: cruise, profile, sample</p>
+<p>Each property is a frozen set of WHPName instances.
+The grouping is by what “scope” the parameter applies to.
+For example, the station id (STNNBR) applies to an entire profile.
+Only “profile” level parameters are allowed to be in CTD headers.</p>
+<p>There are currently no “cruise” level parameters.
+All parameters have a scope.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"EXPOCODE"</span><span class="p">]</span> <span class="ow">in</span> <span class="n">WHPNames</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">profile</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="cchdo.params._WHPNames.items">
 <span class="sig-name descname"><span class="pre">items</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">a</span> <span class="pre">set-like</span> <span class="pre">object</span> <span class="pre">providing</span> <span class="pre">a</span> <span class="pre">view</span> <span class="pre">on</span> <span class="pre">D’s</span> <span class="pre">items</span></span></span><a class="headerlink" href="#cchdo.params._WHPNames.items" title="Permalink to this definition">¶</a></dt>
@@ -440,11 +461,17 @@ empty units.</p>
 <dl class="py property">
 <dt class="sig sig-object py" id="cchdo.params._WHPNames.legacy_json">
 <em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">legacy_json</span></span><a class="headerlink" href="#cchdo.params._WHPNames.legacy_json" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Provides the params database in the format expected in the old json database</p>
+<p>The order of the objects is guaranteed to be in the preferred WOCE order by parameter name.
+The ordering of parameters with the same name but different units is arbitrary.</p>
+<p>This property is the corresponding python object and not JSON text, it must still be serialized.
+This property will validate against the schema in <a class="reference internal" href="#cchdo.params._WHPNames.legacy_json_schema" title="cchdo.params._WHPNames.legacy_json_schema"><code class="xref py py-class docutils literal notranslate"><span class="pre">_WHPNames.legacy_json_schema</span></code></a></p>
+</dd></dl>
 <dl class="py property">
 <dt class="sig sig-object py" id="cchdo.params._WHPNames.legacy_json_schema">
 <em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">legacy_json_schema</span></span><a class="headerlink" href="#cchdo.params._WHPNames.legacy_json_schema" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>A JSONSchema draft-04 which describes a valid <a class="reference internal" href="#cchdo.params._WHPNames.legacy_json" title="cchdo.params._WHPNames.legacy_json"><code class="xref py py-class docutils literal notranslate"><span class="pre">_WHPNames.legacy_json</span></code></a> document</p>
+</dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="cchdo.params._WHPNames.values">
 <span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">an</span> <span class="pre">object</span> <span class="pre">providing</span> <span class="pre">a</span> <span class="pre">view</span> <span class="pre">on</span> <span class="pre">D’s</span> <span class="pre">values</span></span></span><a class="headerlink" href="#cchdo.params._WHPNames.values" title="Permalink to this definition">¶</a></dt>
@@ -470,6 +497,14 @@ empty units.</p>
 <span class="sig-name descname"><span class="pre">values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">an</span> <span class="pre">object</span> <span class="pre">providing</span> <span class="pre">a</span> <span class="pre">view</span> <span class="pre">on</span> <span class="pre">D’s</span> <span class="pre">values</span></span></span><a class="headerlink" href="#cchdo.params._CFStandardNames.values" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 </dd></dl>
+<dl class="py data">
+<dt class="sig sig-object py" id="cchdo.params.WHPNames">
+<span class="sig-prename descclassname"><span class="pre">cchdo.params.</span></span><span class="sig-name descname"><span class="pre">WHPNames</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;cchdo.params._WHPNames</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#cchdo.params.WHPNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="py data">
+<dt class="sig sig-object py" id="cchdo.params.CFStandardNames">
+<span class="sig-prename descclassname"><span class="pre">cchdo.params.</span></span><span class="sig-name descname"><span class="pre">CFStandardNames</span></span><em class="property"> <span class="pre">=</span> <span class="pre">&lt;cchdo.params._CFStandardNames</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#cchdo.params.CFStandardNames" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 </section>
 
       </article>
