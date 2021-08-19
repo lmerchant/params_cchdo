@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Welcome to cchdo.params’s documentation!" href="index.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Changelog" href="changelog.html" />
 
     <meta name="generator" content="sphinx-4.1.2, furo 2021.08.17.beta43"/>
-        <title>API reference - cchdo.params 0.1.dev1+g51e164b documentation</title>
+        <title>API reference - cchdo.params 0.1.dev1+g1370d4c documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=910ac4ccc9d7c023151c34010d7b500fb9777a51" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
@@ -121,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">cchdo.params 0.1.dev1+g51e164b documentation</div></a>
+      <a href="index.html"><div class="brand">cchdo.params 0.1.dev1+g1370d4c documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -144,7 +144,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">cchdo.params 0.1.dev1+g51e164b documentation</span>
+  <span class="sidebar-brand-text">cchdo.params 0.1.dev1+g1370d4c documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -154,6 +154,7 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">API reference</a></li>
 </ul>
 
@@ -185,7 +186,8 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="cchdo.params.CFStandardName">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">cchdo.params.</span></span><span class="sig-name descname"><span class="pre">CFStandardName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">canonical_units</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grib</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amip</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cchdo.params.CFStandardName" title="Permalink to this definition">¶</a></dt>
-<dd><p>Wrapper for CF Standard Names</p>
+<dd><p>Dataclass representing a single CF Standard Name</p>
+<p>This class captures the information in the standard name table as properties.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="cchdo.params.CFStandardName.amip">
 <span class="sig-name descname"><span class="pre">amip</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#cchdo.params.CFStandardName.amip" title="Permalink to this definition">¶</a></dt>
@@ -220,7 +222,8 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="cchdo.params.WHPName">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">cchdo.params.</span></span><span class="sig-name descname"><span class="pre">WHPName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">whp_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nc_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="pre">string</span><span class="p"><span class="pre">,</span> </span><span class="pre">decimal</span><span class="p"><span class="pre">,</span> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">whp_unit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag_w</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cf_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_min</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_max</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numeric_precision</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_width</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warning</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cf_unit</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_scale</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">whp_number</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scope</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">'sample'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analytical_temperature_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analytical_temperature_units</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cchdo.params.WHPName" title="Permalink to this definition">¶</a></dt>
-<dd><p>Wrapper for WHP parameters.json</p>
+<dd><p>Dataclass representing a single exchange/WOCE style name + unit pair</p>
+<p>There is a ton of extra information that is meant for use in making CF/netCDF files.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="cchdo.params.WHPName.analytical_temperature_name">
 <span class="sig-name descname"><span class="pre">analytical_temperature_name</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#cchdo.params.WHPName.analytical_temperature_name" title="Permalink to this definition">¶</a></dt>
@@ -417,10 +420,25 @@ empty units.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="cchdo.params._WHPNames">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">cchdo.params.</span></span><span class="sig-name descname"><span class="pre">_WHPNames</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cchdo.params._WHPNames" title="Permalink to this definition">¶</a></dt>
-<dd><p>A Mapping providing a lookup between a WOCE style param and unit to an instance of <a class="reference internal" href="#cchdo.params.WHPName" title="cchdo.params.WHPName"><code class="xref py py-class docutils literal notranslate"><span class="pre">WHPName</span></code></a></p>
+<dd><p>A Mapping (i.e. dict) providing a lookup between a WOCE style param and unit to an instance of <a class="reference internal" href="#cchdo.params.WHPName" title="cchdo.params.WHPName"><code class="xref py py-class docutils literal notranslate"><span class="pre">WHPName</span></code></a></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>This class should not be directly used, instead use the premade <cite>WHPNames</cite> instance from this module</p>
+<p>This class should not be directly used, instead use the premade <a class="reference internal" href="#cchdo.params.WHPNames" title="cchdo.params.WHPNames"><code class="xref py py-data docutils literal notranslate"><span class="pre">WHPNames</span></code></a> instance from this module</p>
+</div>
+<p>Parameters are looked up using a tuple of <cite>(name, unit)</cite> as strings.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[(</span><span class="s2">"CTDPRS"</span><span class="p">,</span> <span class="s2">"DBARS"</span><span class="p">)]</span>
+<span class="go">WHPName(whp_name='CTDPRS', whp_unit='DBAR', cf_name='sea_water_pressure')</span>
+</pre></div>
+</div>
+<p>If the parameter is unitless use <code class="docutils literal notranslate"><span class="pre">None</span></code>.:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[(</span><span class="s2">"EXPOCODE"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)]</span>
+<span class="go">WHPName(whp_name='EXPOCODE', whp_unit=None, cf_name=None)</span>
+</pre></div>
+</div>
+<p>As a convience, unitless params may be looked up via their name alone:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"EXPOCODE"</span><span class="p">]</span>
+<span class="go">WHPName(whp_name='EXPOCODE', whp_unit=None, cf_name=None)</span>
+</pre></div>
 </div>
 <dl class="py property">
 <dt class="sig sig-object py" id="cchdo.params._WHPNames.error_cols">
@@ -512,14 +530,14 @@ This property will validate against the schema in <a class="reference internal" 
         
         <div class="related-pages">
           
-          <a class="prev-page" href="index.html">
+          <a class="prev-page" href="changelog.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Home</div>
+                <div class="title">Changelog</div>
                 
               </div>
             </a>
