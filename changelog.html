@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API reference" href="api.html" /><link rel="prev" title="User Guide" href="user_guide.html" />
 
-    <meta name="generator" content="sphinx-4.1.2, furo 2021.08.17.beta43"/>
-        <title>Changelog - cchdo.params 0.1.14 documentation</title>
+    <meta name="generator" content="sphinx-4.2.0, furo 2021.09.22"/>
+        <title>Changelog - cchdo.params 0.1.15.dev1+g6c40a81 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=910ac4ccc9d7c023151c34010d7b500fb9777a51" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=150e365fa939648e89c22f6d7d13c72a1657915a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
     
     
@@ -32,9 +32,11 @@
   
     }
   }
-</style>
-    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css"></head>
+</style></head>
   <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
@@ -121,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">cchdo.params 0.1.14 documentation</div></a>
+      <a href="index.html"><div class="brand">cchdo.params 0.1.15.dev1+g6c40a81 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -144,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">cchdo.params 0.1.14 documentation</span>
+  <span class="sidebar-brand-text">cchdo.params 0.1.15.dev1+g6c40a81 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -167,7 +169,7 @@
   </aside>
   <div class="main">
     <div class="content">
-      <article role="main">
+      <div class="article-container">
         <div class="content-icon-container">
           <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
@@ -182,14 +184,20 @@
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
-        <section id="changelog">
+        <article role="main">
+          <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
 <section id="v0-1-15-unreleased">
 <h2>v0.1.15 (unreleased)<a class="headerlink" href="#v0-1-15-unreleased" title="Permalink to this headline">¶</a></h2>
 <section id="parameter-changes">
 <h3>Parameter Changes<a class="headerlink" href="#parameter-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>None yet</p></li>
+<li><p>AZOTE has been renamed to N2 [UMOL/KG]</p>
+<ul>
+<li><p>AZOTE [UMOL/KG] has been added as an alias</p></li>
+<li><p>Added N2_ERROR as the uncertanty name for N2</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="api-changes">
@@ -336,7 +344,8 @@ As of release, there were no “cruise” level parameter names in the database.
 </section>
 </section>
 
-      </article>
+        </article>
+      </div>
       <footer>
         
         <div class="related-pages">
@@ -363,13 +372,11 @@ As of release, there were no “cruise” level parameter names in the database.
         </div>
 
         <div class="related-information">
-              Copyright &#169; 2021, Regents of the University of California
-            |
+              Copyright &#169; 2021, Regents of the University of California |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            |
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
             <a class="muted-link" href="_sources/changelog.rst.txt"
                rel="nofollow">
               Show Source
