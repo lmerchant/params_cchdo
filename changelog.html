@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API reference" href="api.html" /><link rel="prev" title="User Guide" href="user_guide.html" />
 
-    <meta name="generator" content="sphinx-4.2.0, furo 2021.10.09"/>
-        <title>Changelog - cchdo.params 0.1.16.dev5+g9d7c60e documentation</title>
+    <meta name="generator" content="sphinx-4.3.0, furo 2021.11.16"/>
+        <title>Changelog - cchdo.params 0.1.16.dev8+g63bcc8e documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=0254c309f5cadf746f1a613e7677379ac9c8cdcd" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=916d6ed8f59335acffa15474ff504849343d4c76" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
     
     
 
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">cchdo.params 0.1.16.dev5+g9d7c60e documentation</div></a>
+      <a href="index.html"><div class="brand">cchdo.params 0.1.16.dev8+g63bcc8e documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">cchdo.params 0.1.16.dev5+g9d7c60e documentation</span>
+  <span class="sidebar-brand-text">cchdo.params 0.1.16.dev8+g63bcc8e documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -192,13 +192,38 @@
 <section id="parameter-changes">
 <h3>Parameter Changes<a class="headerlink" href="#parameter-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>None yet</p></li>
+<li><p>Add the following aliases for CHLORA [UG/L]</p>
+<ul>
+<li><p>CHLORA [MG/CUM]</p></li>
+<li><p>CHLORA [MG/M^3]</p></li>
+</ul>
+</li>
+<li><p>Add descriptions to DELC13 and DELC12 names</p></li>
+<li><p>Add description to 14C-DOC</p>
+<ul>
+<li><p>Add 14C-DOCERR as the uncertanty name</p></li>
+</ul>
+</li>
+<li><p>Add 13C-DOC [/MILLE] as a parameter</p>
+<ul>
+<li><p>Add 13C-DOCERR as the uncertanty name</p></li>
+</ul>
+</li>
+<li><p>Add D18O_NO3 as a parameter</p>
+<ul>
+<li><p>Add D18O_NO3_ERROR as the uncertanty name</p></li>
+</ul>
+</li>
+<li><p>Changed the units of D15N_NO3 from unitless to /MILLE</p></li>
+<li><p>Add D18O_NO2+NO3_ERROR as the uncertanty parameter for D18O_NO2+NO3</p></li>
+<li><p>Add D15N_NO2+NO3_ERROR as the uncertanty parameter for D15N_NO2+NO3</p></li>
 </ul>
 </section>
 <section id="api-changes">
 <h3>API Changes<a class="headerlink" href="#api-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>None yet</p></li>
+<li><p>Removed sqlalchemy as an install/runtime dependency, it is still required for dev tasks.
+This has two rather nice effects: only the python standard library is needed for install and import/loading parameters gets a ~10x speed up.</p></li>
 </ul>
 </section>
 </section>
@@ -394,11 +419,9 @@ As of release, there were no “cruise” level parameter names in the database.
 
         <div class="related-information">
               Copyright &#169; 2021, Regents of the University of California |
-            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
-              and
-              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
-            <a class="muted-link" href="_sources/changelog.rst.txt"
+          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            | <a class="muted-link" href="_sources/changelog.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -479,6 +502,6 @@ As of release, there were no “cruise” level parameter names in the database.
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/main.js"></script>
+    <script src="_static/scripts/furo.js"></script>
     </body>
 </html>
