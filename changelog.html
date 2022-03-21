@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API reference" href="api.html" /><link rel="prev" title="User Guide" href="user_guide.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.03.04"/>
-        <title>Changelog - cchdo.params 0.1.17.dev9+g576e221 documentation</title>
+        <title>Changelog - cchdo.params 0.1.17.dev12+g3b91ba4 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
@@ -121,7 +121,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">cchdo.params 0.1.17.dev9+g576e221 documentation</div></a>
+      <a href="index.html"><div class="brand">cchdo.params 0.1.17.dev12+g3b91ba4 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -144,7 +144,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">cchdo.params 0.1.17.dev9+g576e221 documentation</span>
+  <span class="sidebar-brand-text">cchdo.params 0.1.17.dev12+g3b91ba4 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -196,6 +196,12 @@
 <section id="parameter-changes">
 <h3>Parameter Changes<a class="headerlink" href="#parameter-changes" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
+<li><p>The CF Standard Name table was updated to v79</p>
+<ul>
+<li><p>Added the new standard names to CCHDO params if appropriate</p></li>
+<li><p>Of particular note is that TCARBN [UMOL/KG] has the standard name: moles_of_dissolved_inorganic_carbon_per_unit_mass_in_sea_water</p></li>
+</ul>
+</li>
 <li><p>Add name CTDNITRATE [UMOL/KG] for an in situ nitrate sensor.</p></li>
 <li><p>Add the following aliases:</p>
 <ul>
@@ -238,22 +244,22 @@
 <li><p>Add descriptions to DELC13 and DELC12 names</p></li>
 <li><p>Add description to 14C-DOC</p>
 <ul>
-<li><p>Add 14C-DOCERR as the uncertanty name</p></li>
+<li><p>Add 14C-DOCERR as the uncertainty name</p></li>
 </ul>
 </li>
 <li><p>Add 13C-DOC [/MILLE] as a parameter</p>
 <ul>
-<li><p>Add 13C-DOCERR as the uncertanty name</p></li>
+<li><p>Add 13C-DOCERR as the uncertainty name</p></li>
 </ul>
 </li>
 <li><p>Add D18O_NO3 as a parameter</p>
 <ul>
-<li><p>Add D18O_NO3_ERROR as the uncertanty name</p></li>
+<li><p>Add D18O_NO3_ERROR as the uncertainty name</p></li>
 </ul>
 </li>
 <li><p>Changed the units of D15N_NO3 from unitless to /MILLE</p></li>
-<li><p>Add D18O_NO2+NO3_ERROR as the uncertanty parameter for D18O_NO2+NO3</p></li>
-<li><p>Add D15N_NO2+NO3_ERROR as the uncertanty parameter for D15N_NO2+NO3</p></li>
+<li><p>Add D18O_NO2+NO3_ERROR as the uncertainty parameter for D18O_NO2+NO3</p></li>
+<li><p>Add D15N_NO2+NO3_ERROR as the uncertainty parameter for D15N_NO2+NO3</p></li>
 </ul>
 </section>
 <section id="id2">
@@ -278,7 +284,7 @@ This has two rather nice effects: only the python standard library is needed for
 <li><p>AZOTE has been renamed to N2 [UMOL/KG]</p>
 <ul>
 <li><p>AZOTE [UMOL/KG] has been added as an alias</p></li>
-<li><p>Added N2_ERROR as the uncertanty name for N2</p></li>
+<li><p>Added N2_ERROR as the uncertainty name for N2</p></li>
 </ul>
 </li>
 </ul>
