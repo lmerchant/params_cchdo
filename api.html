@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="Changelog" href="changelog.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.03.04"/>
-        <title>API reference - cchdo.params 0.1.18.dev1+g44dafe9 documentation</title>
+    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
+        <title>API reference - cchdo.params 0.1.18.dev2+gd8e3d88 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=935aa2abcc5c1da4283d1dc201fb1f0add16d23a" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=25ceb02ed1c46dc30f2321ff83e92799f69dfdb9" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -36,10 +36,12 @@
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
@@ -121,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">cchdo.params 0.1.18.dev1+g44dafe9 documentation</div></a>
+      <a href="index.html"><div class="brand">cchdo.params 0.1.18.dev2+gd8e3d88 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -144,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">cchdo.params 0.1.18.dev1+g44dafe9 documentation</span>
+  <span class="sidebar-brand-text">cchdo.params 0.1.18.dev2+gd8e3d88 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -329,6 +331,12 @@ so a mapping is needed.</p>
 <p>The use of print precisions as an approximation for uncertainty should only be used if there is no other source of uncertainty.</p>
 </div>
 </dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="cchdo.params.WHPName.odv_key">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">odv_key</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#cchdo.params.WHPName.odv_key" title="Permalink to this definition">#</a></dt>
+<dd><p>An ODV style representation of the param in the form of “NAME [UNIT]”</p>
+<p>Note that the “[UNIT]” part is omitted if there are no units</p>
+</dd></dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="cchdo.params.WHPName.rank">
 <span class="sig-name descname"><span class="pre">rank</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#cchdo.params.WHPName.rank" title="Permalink to this definition">#</a></dt>
@@ -433,7 +441,7 @@ empty units.</p>
 <p class="admonition-title">Warning</p>
 <p>This class should not be directly used, instead use the premade <a class="reference internal" href="#cchdo.params.WHPNames" title="cchdo.params.WHPNames"><code class="xref py py-data docutils literal notranslate"><span class="pre">WHPNames</span></code></a> instance from this module</p>
 </div>
-<p>Parameters are looked up using a tuple of <cite>(name, unit)</cite> as strings.</p>
+<p>Parameters are looked up using a tuple of <cite>(name, unit)</cite>.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[(</span><span class="s2">"CTDPRS"</span><span class="p">,</span> <span class="s2">"DBARS"</span><span class="p">)]</span>
 <span class="go">WHPName(whp_name='CTDPRS', whp_unit='DBAR', cf_name='sea_water_pressure')</span>
 </pre></div>
@@ -443,9 +451,16 @@ empty units.</p>
 <span class="go">WHPName(whp_name='EXPOCODE', whp_unit=None, cf_name=None)</span>
 </pre></div>
 </div>
-<p>As a convience, unitless params may be looked up via their name alone:</p>
+<p>Parameters may also be looked up using ODV style PARAM [UNIT] strings, omitting the [UNIT] for unitless params</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"EXPOCODE"</span><span class="p">]</span>
 <span class="go">WHPName(whp_name='EXPOCODE', whp_unit=None, cf_name=None)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"CTDPRS [DBAR]"</span><span class="p">]</span>
+<span class="go">WHPName(whp_name='CTDPRS', whp_unit='DBAR', cf_name='sea_water_pressure')</span>
+</pre></div>
+</div>
+<p>Parameter aliases also work with ODV style names:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"CTDPRS [DBARS]"</span><span class="p">]</span>
+<span class="go">WHPName(whp_name='CTDPRS', whp_unit='DBAR', cf_name='sea_water_pressure')</span>
 </pre></div>
 </div>
 <dl class="py method">
@@ -513,6 +528,11 @@ This property will validate against the schema in <a class="reference internal" 
 <dt class="sig sig-object py" id="cchdo.params._WHPNames.legacy_json_schema">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">legacy_json_schema</span></span><a class="headerlink" href="#cchdo.params._WHPNames.legacy_json_schema" title="Permalink to this definition">#</a></dt>
 <dd><p>A JSONSchema draft-04 which describes a valid <a class="reference internal" href="#cchdo.params._WHPNames.legacy_json" title="cchdo.params._WHPNames.legacy_json"><code class="xref py py-class docutils literal notranslate"><span class="pre">_WHPNames.legacy_json</span></code></a> document</p>
+</dd></dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="cchdo.params._WHPNames.odv_names">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">odv_names</span></span><a class="headerlink" href="#cchdo.params._WHPNames.odv_names" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a mapping of ODV style names to WHPName instances</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="cchdo.params._WHPNames.values">
