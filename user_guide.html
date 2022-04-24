@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Changelog" href="changelog.html" /><link rel="prev" title="Welcome to cchdo.params’s documentation!" href="index.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
-        <title>User Guide - cchdo.params 0.1.18.dev4+g2b22c7b documentation</title>
+        <title>User Guide - cchdo.params 0.1.18.dev5+gdac225f documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">cchdo.params 0.1.18.dev4+g2b22c7b documentation</div></a>
+      <a href="index.html"><div class="brand">cchdo.params 0.1.18.dev5+gdac225f documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">cchdo.params 0.1.18.dev4+g2b22c7b documentation</span>
+  <span class="sidebar-brand-text">cchdo.params 0.1.18.dev5+gdac225f documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -224,11 +224,18 @@ Exchange parameters are looked up by <code class="docutils literal notranslate">
 <span class="go">WHPName(whp_name='EXPOCODE', whp_unit=None, cf_name=None)</span>
 </pre></div>
 </div>
-<p>As a connivence, unitless parameters may be looked up via name alone.</p>
+<p>As a connivence, parameters may be looked up via ODV style PARAM [UNIT] strings, omitting the [UNIT] part for unitless parameters.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"EXPOCODE"</span><span class="p">]</span>
 <span class="go">WHPName(whp_name='EXPOCODE', whp_unit=None, cf_name=None)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"EXPOCODE"</span><span class="p">]</span> <span class="o">==</span> <span class="n">WHPNames</span><span class="p">[(</span><span class="s2">"EXPOCODE"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)]</span>
 <span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"CTDPRS [DBAR]"</span><span class="p">]</span>
+<span class="go">WHPName(whp_name='CTDPRS', whp_unit='DBAR', cf_name='sea_water_pressure')</span>
+</pre></div>
+</div>
+<p>Aliases will return their canonical parameter object</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"CTDPRS [DBARS]"</span><span class="p">]</span> <span class="c1"># note the "s" at the end of the unit</span>
+<span class="go">WHPName(whp_name='CTDPRS', whp_unit='DBAR', cf_name='sea_water_pressure')</span>
 </pre></div>
 </div>
 <div class="admonition warning">
