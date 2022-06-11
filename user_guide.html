@@ -1,14 +1,14 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Changelog" href="changelog.html" /><link rel="prev" title="Welcome to cchdo.params’s documentation!" href="index.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.04.07"/>
-        <title>User Guide - cchdo.params 0.1.18.dev7+g9d399f2 documentation</title>
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1"/>
+        <title>User Guide - cchdo.params 0.1.18.dev8+g4501add documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=68f4518137b9aefe99b631505a2064c3c42c9852" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">cchdo.params 0.1.18.dev7+g9d399f2 documentation</div></a>
+      <a href="index.html"><div class="brand">cchdo.params 0.1.18.dev8+g4501add documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">cchdo.params 0.1.18.dev7+g9d399f2 documentation</span>
+  <span class="sidebar-brand-text">cchdo.params 0.1.18.dev8+g4501add documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -177,7 +177,8 @@
           </svg>
           <span>Back to top</span>
         </a>
-        <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -192,13 +193,13 @@
         </div>
         <article role="main">
           <section id="user-guide">
-<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">#</a></h1>
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this heading">#</a></h1>
 <p>The primary interface are the <a class="reference internal" href="api.html#cchdo.params.WHPNames" title="cchdo.params.WHPNames"><code class="xref py py-data docutils literal notranslate"><span class="pre">WHPNames</span></code></a> and <a class="reference internal" href="api.html#cchdo.params.CFStandardNames" title="cchdo.params.CFStandardNames"><code class="xref py py-data docutils literal notranslate"><span class="pre">CFStandardNames</span></code></a> objects.
 We will focus mostly on the <a class="reference internal" href="api.html#cchdo.params.WHPNames" title="cchdo.params.WHPNames"><code class="xref py py-data docutils literal notranslate"><span class="pre">WHPNames</span></code></a> object.</p>
 <section id="the-whpnames-collection">
-<h2>The WHPNames Collection<a class="headerlink" href="#the-whpnames-collection" title="Permalink to this headline">#</a></h2>
+<h2>The WHPNames Collection<a class="headerlink" href="#the-whpnames-collection" title="Permalink to this heading">#</a></h2>
 <section id="importing">
-<h3>Importing<a class="headerlink" href="#importing" title="Permalink to this headline">#</a></h3>
+<h3>Importing<a class="headerlink" href="#importing" title="Permalink to this heading">#</a></h3>
 <p>The actual database is loaded in a lazy way, so the initial import should be fast.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">cchdo.params</span> <span class="kn">import</span> <span class="n">WHPNames</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span>
@@ -207,46 +208,46 @@ We will focus mostly on the <a class="reference internal" href="api.html#cchdo.p
 </div>
 </section>
 <section id="name-lookups">
-<h3>Name Lookups<a class="headerlink" href="#name-lookups" title="Permalink to this headline">#</a></h3>
+<h3>Name Lookups<a class="headerlink" href="#name-lookups" title="Permalink to this heading">#</a></h3>
 <p>These objects follow the standard python Mapping (e.g. dict) interface.
 Exchange parameters are looked up by <code class="docutils literal notranslate"><span class="pre">(param,</span> <span class="pre">unit)</span></code> tuple keys and will always return a <a class="reference internal" href="api.html#cchdo.params.WHPName" title="cchdo.params.WHPName"><code class="xref py py-data docutils literal notranslate"><span class="pre">WHPName</span></code></a> object (more on these later).</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[(</span><span class="s2">"CTDPRS"</span><span class="p">,</span> <span class="s2">"DBAR"</span><span class="p">)]</span>
-<span class="go">WHPName(whp_name='CTDPRS', whp_unit='DBAR', cf_name='sea_water_pressure')</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[(</span><span class="s2">&quot;CTDPRS&quot;</span><span class="p">,</span> <span class="s2">&quot;DBAR&quot;</span><span class="p">)]</span>
+<span class="go">WHPName(whp_name=&#39;CTDPRS&#39;, whp_unit=&#39;DBAR&#39;, cf_name=&#39;sea_water_pressure&#39;)</span>
 </pre></div>
 </div>
 <p>Common unambiguous variations on a parameter name are automatically converted to their canonical representation:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[(</span><span class="s2">"CTDPRS"</span><span class="p">,</span> <span class="s2">"DBARS"</span><span class="p">)]</span>
-<span class="go">WHPName(whp_name='CTDPRS', whp_unit='DBAR', cf_name='sea_water_pressure')</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[(</span><span class="s2">&quot;CTDPRS&quot;</span><span class="p">,</span> <span class="s2">&quot;DBARS&quot;</span><span class="p">)]</span>
+<span class="go">WHPName(whp_name=&#39;CTDPRS&#39;, whp_unit=&#39;DBAR&#39;, cf_name=&#39;sea_water_pressure&#39;)</span>
 </pre></div>
 </div>
 <p>If the parameter has no units, use <code class="docutils literal notranslate"><span class="pre">None</span></code> in the units part of the tuple.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[(</span><span class="s2">"EXPOCODE"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)]</span>
-<span class="go">WHPName(whp_name='EXPOCODE', whp_unit=None, cf_name=None)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[(</span><span class="s2">&quot;EXPOCODE&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)]</span>
+<span class="go">WHPName(whp_name=&#39;EXPOCODE&#39;, whp_unit=None, cf_name=None)</span>
 </pre></div>
 </div>
 <p>As a connivence, parameters may be looked up via ODV style PARAM [UNIT] strings, omitting the [UNIT] part for unitless parameters.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"EXPOCODE"</span><span class="p">]</span>
-<span class="go">WHPName(whp_name='EXPOCODE', whp_unit=None, cf_name=None)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"EXPOCODE"</span><span class="p">]</span> <span class="o">==</span> <span class="n">WHPNames</span><span class="p">[(</span><span class="s2">"EXPOCODE"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)]</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">&quot;EXPOCODE&quot;</span><span class="p">]</span>
+<span class="go">WHPName(whp_name=&#39;EXPOCODE&#39;, whp_unit=None, cf_name=None)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">&quot;EXPOCODE&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">WHPNames</span><span class="p">[(</span><span class="s2">&quot;EXPOCODE&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)]</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"CTDPRS [DBAR]"</span><span class="p">]</span>
-<span class="go">WHPName(whp_name='CTDPRS', whp_unit='DBAR', cf_name='sea_water_pressure')</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">&quot;CTDPRS [DBAR]&quot;</span><span class="p">]</span>
+<span class="go">WHPName(whp_name=&#39;CTDPRS&#39;, whp_unit=&#39;DBAR&#39;, cf_name=&#39;sea_water_pressure&#39;)</span>
 </pre></div>
 </div>
 <p>Aliases will return their canonical parameter object</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"CTDPRS [DBARS]"</span><span class="p">]</span> <span class="c1"># note the "s" at the end of the unit</span>
-<span class="go">WHPName(whp_name='CTDPRS', whp_unit='DBAR', cf_name='sea_water_pressure')</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">&quot;CTDPRS [DBARS]&quot;</span><span class="p">]</span> <span class="c1"># note the &quot;s&quot; at the end of the unit</span>
+<span class="go">WHPName(whp_name=&#39;CTDPRS&#39;, whp_unit=&#39;DBAR&#39;, cf_name=&#39;sea_water_pressure&#39;)</span>
 </pre></div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Currently the <code class="docutils literal notranslate"><span class="pre">(param,</span> <span class="pre">unit)</span></code> tuples are case sensitive.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">"ExpoCode"</span><span class="p">]</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[</span><span class="s2">&quot;ExpoCode&quot;</span><span class="p">]</span>
 <span class="gt">Traceback (most recent call last):</span>
-  File <span class="nb">"&lt;stdin&gt;"</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
-  File <span class="nb">"/workspaces/params/cchdo/params/__init__.py"</span>, line <span class="m">406</span>, in <span class="n">__getitem__</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+  File <span class="nb">&quot;/workspaces/params/cchdo/params/__init__.py&quot;</span>, line <span class="m">406</span>, in <span class="n">__getitem__</span>
     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cached_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-<span class="gr">KeyError</span>: <span class="n">('ExpoCode', None)</span>
+<span class="gr">KeyError</span>: <span class="n">(&#39;ExpoCode&#39;, None)</span>
 </pre></div>
 </div>
 </div>
@@ -259,24 +260,24 @@ In the SI system this is said to have the unit one with the symbol 1.
 See section 2.3.3 of <a class="reference internal" href="#bipm2019" id="id1"><span>[BIPM2019]</span></a>.
 You will see the value of 1 in the units attribute of netCDF files.
 However, in WPH Exchange files, the correct unit for practical salinity is PSS-78.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[(</span><span class="s2">"CTDSAL"</span><span class="p">,</span> <span class="s2">"PSS-78"</span><span class="p">)]</span>
-<span class="go">WHPName(whp_name='CTDSAL', whp_unit='PSS-78', cf_name='sea_water_practical_salinity')</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[(</span><span class="s2">"CTDSAL"</span><span class="p">,</span> <span class="s2">"PSS-78"</span><span class="p">)]</span><span class="o">.</span><span class="n">cf_unit</span>
-<span class="go">'1'</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[(</span><span class="s2">&quot;CTDSAL&quot;</span><span class="p">,</span> <span class="s2">&quot;PSS-78&quot;</span><span class="p">)]</span>
+<span class="go">WHPName(whp_name=&#39;CTDSAL&#39;, whp_unit=&#39;PSS-78&#39;, cf_name=&#39;sea_water_practical_salinity&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">WHPNames</span><span class="p">[(</span><span class="s2">&quot;CTDSAL&quot;</span><span class="p">,</span> <span class="s2">&quot;PSS-78&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">cf_unit</span>
+<span class="go">&#39;1&#39;</span>
 </pre></div>
 </div>
 </div>
 </section>
 <section id="dict-like-operations">
-<h3>Dict-like operations<a class="headerlink" href="#dict-like-operations" title="Permalink to this headline">#</a></h3>
+<h3>Dict-like operations<a class="headerlink" href="#dict-like-operations" title="Permalink to this heading">#</a></h3>
 <p>Since <a class="reference internal" href="api.html#cchdo.params.WHPNames" title="cchdo.params.WHPNames"><code class="xref py py-data docutils literal notranslate"><span class="pre">WHPNames</span></code></a> follows the python Mapping interface, you can do all the standard dict operations on it.</p>
 <p>Membership tests:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s2">"CTDSAL"</span><span class="p">,</span> <span class="s2">"PSS-78"</span><span class="p">)</span> <span class="ow">in</span> <span class="n">WHPNames</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="s2">&quot;CTDSAL&quot;</span><span class="p">,</span> <span class="s2">&quot;PSS-78&quot;</span><span class="p">)</span> <span class="ow">in</span> <span class="n">WHPNames</span>
 <span class="go">True</span>
 </pre></div>
 </div>
 <p>Dimensionless membership tests also work:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">"EXPOCODE"</span> <span class="ow">in</span> <span class="n">WHPNames</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;EXPOCODE&quot;</span> <span class="ow">in</span> <span class="n">WHPNames</span>
 <span class="go">True</span>
 </pre></div>
 </div>
@@ -285,7 +286,7 @@ However, in WPH Exchange files, the correct unit for practical salinity is PSS-7
 <span class="gp">... </span>  <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 <span class="gp">... </span>  <span class="k">break</span>
 <span class="gp">...</span>
-<span class="go">('EXPOCODE', None)</span>
+<span class="go">(&#39;EXPOCODE&#39;, None)</span>
 </pre></div>
 </div>
 <p>The views returned by <cite>.items()</cite>, <cite>.values()</cite>, and <cite>.keys()</cite> also work as expected.</p>
@@ -300,7 +301,7 @@ This means there will be more keys returned than there are actual WHPName values
 </div>
 </section>
 <section id="whpname-groups">
-<h3><a class="reference internal" href="api.html#cchdo.params.WHPName" title="cchdo.params.WHPName"><code class="xref py py-data docutils literal notranslate"><span class="pre">WHPName</span></code></a> Groups<a class="headerlink" href="#whpname-groups" title="Permalink to this headline">#</a></h3>
+<h3><a class="reference internal" href="api.html#cchdo.params.WHPName" title="cchdo.params.WHPName"><code class="xref py py-data docutils literal notranslate"><span class="pre">WHPName</span></code></a> Groups<a class="headerlink" href="#whpname-groups" title="Permalink to this heading">#</a></h3>
 <p>There are some groupings of parameters that are very useful when translating to netCDF, specifically when determining the shape of the variables.
 The idea was as follows: cruise level parameters would be scalar variables, profile level parameters would be single dimensional, and sample level parameters (e.g. bottle sample measurements) would be two or more dimensional.
 These groupings are provided by a <cite>.groups</cite> property as a named tuple.</p>
@@ -309,11 +310,12 @@ These groupings are provided by a <cite>.groups</cite> property as a named tuple
 </pre></div>
 </div>
 <p>This named tuple has the names: <code class="docutils literal notranslate"><span class="pre">cruise</span></code>, <code class="docutils literal notranslate"><span class="pre">profile</span></code>, and <code class="docutils literal notranslate"><span class="pre">sample</span></code> which all contained frozen sets of <a class="reference internal" href="api.html#cchdo.params.WHPName" title="cchdo.params.WHPName"><code class="xref py py-data docutils literal notranslate"><span class="pre">WHPName</span></code></a> instances.</p>
-<dl class="citation">
-<dt class="label" id="bipm2019"><span class="brackets"><a class="fn-backref" href="#id1">BIPM2019</a></span></dt>
-<dd><p>BIPM. Le Système international d’unités / The International System of Units (‘The SI Brochure’). Bureau international des poids et mesures, ninth edition, 2019. URL <a class="reference external" href="https://www.bipm.org/en/publications/si-brochure">https://www.bipm.org/en/publications/si-brochure</a>, ISBN 978-92-822-2272-0</p>
-</dd>
-</dl>
+<div role="list" class="citation-list">
+<div class="citation" id="bipm2019" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">BIPM2019</a><span class="fn-bracket">]</span></span>
+<p>BIPM. Le Système international d’unités / The International System of Units (‘The SI Brochure’). Bureau international des poids et mesures, ninth edition, 2019. URL <a class="reference external" href="https://www.bipm.org/en/publications/si-brochure">https://www.bipm.org/en/publications/si-brochure</a>, ISBN 978-92-822-2272-0</p>
+</div>
+</div>
 </section>
 </section>
 </section>
@@ -397,6 +399,7 @@ These groupings are provided by a <cite>.groups</cite> property as a named tuple
 </div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/scripts/furo.js"></script>
     </body>
