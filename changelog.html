@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API reference" href="api.html" /><link rel="prev" title="User Guide" href="user_guide.html" />
 
     <meta name="generator" content="sphinx-5.0.2, furo 2022.06.21"/>
-        <title>Changelog - cchdo.params 0.1.18.dev20+gba8a6f6 documentation</title>
+        <title>Changelog - cchdo.params 0.1.18.dev22+ga460af3 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">cchdo.params 0.1.18.dev20+gba8a6f6 documentation</div></a>
+      <a href="index.html"><div class="brand">cchdo.params 0.1.18.dev22+ga460af3 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -146,7 +146,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">cchdo.params 0.1.18.dev20+gba8a6f6 documentation</span>
+  <span class="sidebar-brand-text">cchdo.params 0.1.18.dev22+ga460af3 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -199,6 +199,8 @@
 <section id="parameter-changes">
 <h3>Parameter Changes<a class="headerlink" href="#parameter-changes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
+<li><p>Add CTDDEPTH [METERS] for the actual calcualted depth to the package (not the sea floor)</p></li>
+<li><p>Add ODF_CTDPRS [DBAR] for a reported pressure that was calibrated using the ODF acqusition software (not the calibration software).</p></li>
 <li><p>Added BTLNBR_U and SAMPNO_U as names for people who really want their NBRs to be actual numbers</p></li>
 <li><p>Add XENON [NMOL/KG] and [NMOL/L] for dissolved xenon gas</p></li>
 <li><p>Add KRYPTON [NMOL/KG] and [NMOL/L] for dissolved krypton gas</p></li>
@@ -260,6 +262,10 @@
 <li><p>CTDCDOMFRAW [V] for CTDCDOM [VOLTS]</p></li>
 <li><p>SALNTY [ISS78] for SALNTY [PSS-78]</p></li>
 <li><p>CTDSAL [ISS78] for CTDSAL [PSS-78]</p></li>
+<li><p>BTMDEPTH [METERS] for DEPTH [PSS-78]</p></li>
+<li><p>ODF_CTDPRS [DBARS] for ODF_CTDPRS [DBAR]</p></li>
+<li><p>PCO2TMP [DEC C] for PCO2TMP [DEG C]</p></li>
+<li><p>THETA [DEG_C] for THETA [DEG C]</p></li>
 </ul>
 </li>
 </ul>
@@ -268,6 +274,7 @@
 <h3>API Changes<a class="headerlink" href="#api-changes" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>(BREAKING) The error name look ups in <code class="docutils literal notranslate"><span class="pre">WHPNames.error_names</span></code> must now use the units as either a tuple (error_name, units) or an ODV style PARAM [UNIT] string.</p></li>
+<li><p>Add a <code class="docutils literal notranslate"><span class="pre">WHPName.nc_group</span></code> property to be used when CF wants some columns collaposed into another dimmension (e.g. our CDOM params)</p></li>
 <li><p>Add the following optical properties to <code class="docutils literal notranslate"><span class="pre">WHPName</span></code>:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">WHPName.radiation_wavelength</span></code> - The wavelength in nm of some measured light (path, scattering, etc…), not induced or emitted.</p></li>
